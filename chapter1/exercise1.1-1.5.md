@@ -32,5 +32,5 @@
 - a + |b|
 
 ## Exercise 1.5
-- Application-order  evaluation: The promgram will never stop.
+- Applicative-order  evaluation: The promgram will never stop.
 - Normal-order evaluation: The result is 0.
