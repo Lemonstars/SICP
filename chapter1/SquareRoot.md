@@ -1,18 +1,19 @@
-## Square Roots by Newton’s Method
-- (define (abs x)  </br>
-　　　(if (< x 0)  </br>
-　　　(- x) x))    </br>
-   
-- (define (good-enough guess x)   </br>
-　　　(if (<                      </br>
-　　　　(abs (- (* guess guess) x)) </br>
-　　　　0.0001)                     </br>
-　　　#t #f))                     </br>
+## Square Roots by Newton's Method
 
-- (define (improve guess x)            </br>
-　　　(/ (+ guess (/ x guess)) 2) )     </br>
+- (define (abs x)  
+　　　(if (< x 0)  
+　　　(- x) x))  
    
-- (define (sqrt-iter guess x)           </br>
-　　　(if (good-enough guess x)          </br>
-　　　　guess                             </br>
-　　　　(sqrt-iter (improve guess x) x))) </br>
+- (define (good-enough guess x)  
+　　　(if (<  
+　　　　(abs (- (* guess guess) x))  
+　　　　0.0001)  
+　　　#t #f))  
+
+- (define (improve guess x)  
+　　　(/ (+ guess (/ x guess)) 2) )  
+   
+- (define (sqrt-iter guess x)  
+　　　(if (good-enough guess x)  
+　　　　guess  
+　　　　(sqrt-iter (improve guess x) x)))  
