@@ -4,7 +4,7 @@ The interpreter will show
 > ;Aborting!: maximum recursion depth exceeded   
 
 The reason is that the interpreter is using applicative-order evaluation.   
-The new-if is just a procedure which will apply actual arguments immediately.  
+The new-if is just a procedure which will apply actual arguments immediately.  
 So, the procedure sqrt-iter will call itself and never stop.
 
 ## Exercise 1.7
