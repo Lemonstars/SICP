@@ -1,6 +1,6 @@
 ## Exercise 1.9
 
-#### procudure one  
+#### procedure one  
  - procudure definition  
 (define (+ a b)
 (if (= a 0) b (inc (+ (dec a) b))))  
