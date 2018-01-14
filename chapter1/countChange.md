@@ -23,4 +23,4 @@ How many different ways can we make change of $1.00, given half-dollars, quarter
   (define (countChange amount) (countChange-iter amount 5))  
   
 - Note  
- - The key-value in the procedure `first-denomination` can be different.
+  The key-value in the procedure `first-denomination` can be different.
