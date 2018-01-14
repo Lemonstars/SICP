@@ -1,4 +1,4 @@
-## Exercise 11
+## Exercise 1.11
 - recursive process  
 (define (f n)  
 　　(cond ( (< n 3) n)  
@@ -20,12 +20,12 @@
   　　　(f-iter 2 1 0 0 n)  
   )  
 
-## Exercise 12
+## Exercise 1.12
 (define (f row column)  
 　　(if (or (= column 1) (= column row)) 1  
 　　　(+ (f (- row 1) (- column 1))  
 　　　　(f (- row 1) column)))  
 )  
 
-## Exercise 13
+## Exercise 1.13
 [See this](http://sicp.readthedocs.io/en/latest/chp1/13.html) 
