@@ -6,6 +6,6 @@
 5
 - order of growth  
   -  space  
-  O(1)
+  O( log(a) )
   -  number of steps  
-  O(a)
+  O( log(a) )
