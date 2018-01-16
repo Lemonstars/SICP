@@ -46,8 +46,10 @@ p' = p^2 + q^2
 q' = 2pq + q^2  
 
 - producure  
+  - step 1:  
 (define (fib n) (fib-iter 1 0 0 1 n))  
 
+  - step 2:  
 (define (fib-iter a b p q n)  
 　　　(cond ((= n 0)  b)  
 　　　　　　((even? n) (fib-iter a b (+ (square p) (square q)) (+ (* 2 p q) (square q)) (/ n 2)))  
