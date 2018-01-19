@@ -32,3 +32,19 @@
 　　　　　(if (> a b) result (iter (next a) (+ result (term a)))))  
 　　　(iter a 0)  
 )
+
+## Exercise 1.31
+- a.  
+  - product  
+  (define (product term a next b)  
+　　　(define (iter a result)  
+　　　　　(if (> a b) result (iter (next a) (* result (term a)))))  
+　　　(iter a 1))  
+   
+  - factorial  
+(define (factorial n)  
+　　　(define (term-self x) x)  
+　　　(define (next-self x) (+ x 1))  
+　　　(product term-self 1 next-self n))  
+   
+  
