@@ -39,5 +39,16 @@
 - The procedure expmod repeats twice.  
 
 ## Exercise 1.27
+- congruent  
+  (define (congruent? a n) (= (expmod a n n) a))  
+
+- test-iter  
+  (define (test-iter a n)  
+ 　　　　(cond ((= a n) #t)  
+ 　　　　　　((congruent? a n) (test-iter (+ a 1) n))  
+ 　　　　　　(else #f)))  
+- carmichael-test
+  (define (carmichael-test n) (test-iter 1 n))  
 
 ## Exercise 1.28
+[See this](http://sicp.readthedocs.io/en/latest/chp1/28.html)
