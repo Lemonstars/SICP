@@ -75,7 +75,7 @@ recursive process:
 
 ## Exercise 1.32
 - a.  
-iterative process:  
+recursive process:  
 (define (accumulate combiner null-value term a next b)  
 　　　(if (> a b) null-value  
 　　　　　(combiner (term a) (accumulate combiner null-value term (next a) next b))))  
@@ -87,7 +87,7 @@ iterative process:
   (define (product term a next b) (accumulate * 1 term a next b))  
 
 - b.  
-recurisive process:  
+iterative process:  
 (define (accumulate combiner null-value term a next b)  
 　　　(define (accumulate-iter a result)  
 　　　　　(if (> a b) result  
