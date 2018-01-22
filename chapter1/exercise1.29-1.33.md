@@ -33,7 +33,7 @@
 　　　(iter a 0)  
 )
 
-## Exercise 1.31
+## Exercise 1.31　
 - a.  
   - product  
   (define (product term a next b)  
@@ -93,3 +93,34 @@ iterative process:
 　　　　　(if (> a b) result  
 　　　　　( accumulate-iter (next a) (combiner (term a) result))))  
 　　　(accumulate-iter a null-value))  
+
+## Exercise 1.33
+- recurisive process:  
+(define (filtered-accumulate combiner null-value term a next b filter?)  
+　　　(if (> a b) null-value  
+　　　　　(if (filter? a)  
+　　　　　　　(combiner (term a) (filtered-accumulate combiner null-value term (next a) next b filter?))  
+　　　　　　　(combiner null-value (filtered-accumulate combiner null-value term (next a) next b filter?)))))  
+
+- iterative process:  
+(define (filtered-accumulate combiner null-value term a next b filter?)  
+　　　(define (accumulate-iter a result)  
+　　　　　(if (> a b) result  
+　　　　　　　(accumulate-iter (next a) (combiner (if (filter? a) (term a) null-value) result))))  
+　　　(accumulate-iter a null-value))  
+   
+- a.  
+(define (sum-prime a b)  
+　　　(define (term-this x) x)  
+　　　(define (next-this x) (+ x 1))  
+　　　(filter-accumulate + 0 term-this a next-this b prime?))  
+   
+- b.  
+(define (coprime? i n)  
+　　　(and (< i n) (= 1 (gcd i n))))  
+   
+   (define (product-of-coprimes n)  
+　　　(filtered-accumulate * 1 (lambda (x) x) 1 (lambda (i) (+ i 1)) n  
+　　　　　(lambda (x) (coprime? x n))))  
+     
+     `Lambda has't been introduced so far. This detail is included in the next chapter`
