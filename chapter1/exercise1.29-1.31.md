@@ -42,9 +42,33 @@
 　　　(iter a 1))  
    
   - factorial  
-(define (factorial n)  
-　　　(define (term-self x) x)  
-　　　(define (next-self x) (+ x 1))  
-　　　(product term-self 1 next-self n))  
+  (define (factorial n)  
+  　　　　　(define (term-self x) x)  
+  　　　　　(define (next-self x) (+ x 1))  
+  　　(product term-self 1 next-self n))  
+  
+ - compute-pi  
+   - next  
+   (define (next n) (+ n 1) )  
    
-  
+   - up-product  
+   (define (up-product n)  
+   　　　(define (up-term x)  
+   　　　　　(if (even?  x) (+ x 2) (+ x 1)))  
+   　　　(product up-term 1 next n))  
+   
+   - low-product  
+   (define (low-product n)    
+   　　　(define (low-term x)  
+   　　　　　(if (even?  x) (+ x 1) (+ x 2)))  
+   　　　(product low-term 1 next n))  
+   
+   - compute-pi  
+   (define (compute-pi n)  
+   　　　(* 4 (/ (* 1.0 (up-product n)) (low-product n))))
+   
+- b.
+recursive process:  
+(define (product term a next b)  
+　　　　　(if (> a b) 1  
+　　　　　(* (term a) (product term (next a) next b))))  
