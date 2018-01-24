@@ -32,4 +32,12 @@ iterative process:
 　　　　　　　　　(+ (d term) result))  
 　　　　　　　　　(- term 1))))  
 　　　(loop 0 k))  
-     
+
+- b.  
+recurisive process:  
+(define (cont-frac n d k)  
+　　　(if (= k 0) 0  
+　　　　　(/ (n 1)  (+ (d 1)  
+     　　(cont-frac (lambda (i) (n (+ i 1)))  
+　　　　　　　(lambda (i) (d (+ i 1)))  
+　　　　　　　(- k 1))))))  
