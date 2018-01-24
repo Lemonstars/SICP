@@ -41,3 +41,17 @@ recurisive process:
      　　(cont-frac (lambda (i) (n (+ i 1)))  
 　　　　　　　(lambda (i) (d (+ i 1)))  
 　　　　　　　(- k 1))))))  
+       
+## Exercise 1.38  
+ (define (e-euler k)  
+ 　　　(+ 2.0  
+ 　　　(cont-frac (lambda (i) 1)  
+ 　　　　　(lambda (i) (if (= (remainder i 3) 2) (/ (+ i 1) 1.5) 1))  
+ 　　　　　k)))  
+      
+## Exercise 1.39  
+(define (tan-cf x k)  
+　　　(cont-frac  
+　　　　　(lambda (i) (if (= i 1) x ( - (* x x))))  
+　　　　　(lambda (i) (- (* i 2) 1))  
+　　　　　k))  
