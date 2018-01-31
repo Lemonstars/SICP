@@ -26,7 +26,7 @@
      
 ## Exercise 2.26
 - one  
-(add-1 zero)  
+　(add-1 zero)  
 => (add-1 (lamda (f) (lambda (x) x)))  
 => (lambda (f) (lambda (x) (f (( (lamda (f) (lambda (x) x)) f) x))))  
 => (lambda (f) (lambda (x) (f ((lambda (x) x) x)))  
@@ -35,8 +35,8 @@
 (define one (lambda (f) (lambda (x) (f x))))
 
 - two  
-(add-1 one)  
-==> (lambda (f) (lambda (x) (f (f x))))  
+　(add-1 one)  
+==> (lambda (f) (lambda (x) (f (f x))))   
 (define two (lambda (f) (lambda (x) (f (f x)))))  
 
 - add  
